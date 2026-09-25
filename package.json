@@ -1,0 +1,10 @@
+{
+  "name": "sr-associates-static-site",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Static HTML, CSS and JavaScript website for SR Associates.",
+  "scripts": {
+    "dev": "python3 -m http.server 8000",
+    "start": "python3 -m http.server 8000"
+  }
+}
