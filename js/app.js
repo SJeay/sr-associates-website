@@ -9,14 +9,14 @@ document.addEventListener('DOMContentLoaded', () => {
   const rippleButtons = document.querySelectorAll('.btn, .filter-chip, .link-btn');
 
   const setActiveNav = () => {
-    const path = window.location.pathname.split('/').pop() || 'index.html';
+    const pathname = window.location.pathname.replace(/\/+$/, '') || '/';
     document.querySelectorAll('.nav-links a').forEach((link) => {
-      const href = link.getAttribute('href');
-      if (href === path || (path === '' && href === 'index.html')) {
-        link.classList.add('active');
-      } else {
-        link.classList.remove('active');
-      }
+      const href = link.getAttribute('href') || '/';
+      const normalizedHref = href.replace(/\/+$/, '') || '/';
+      const isHome = pathname === '/' && normalizedHref === '/';
+      const isMatch = isHome || pathname === normalizedHref;
+
+      link.classList.toggle('active', isMatch);
     });
   };
 
