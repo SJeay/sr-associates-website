@@ -1,17 +1,16 @@
-document.addEventListener('DOMContentLoaded', () => {
+const initializeLocationChoosers = () => {
   const triggers = document.querySelectorAll('[data-directions]');
-  if (!triggers.length) return;
 
   const locations = [
     {
       name: 'SR Associates · Pollachi',
-      address: 'Pollachi Main Road, Meenakshipuram, Pollachi, Tamil Nadu 642103',
+      address: '7/283B, Alva Hospital Opp, Pollachi Road, Meenakshipurm, Coimbatore, Tamilnadu, 642013',
       url: 'https://maps.app.goo.gl/NBx9xJLWrC9ZVFE58'
     },
     {
       name: 'S.R & Co Electronics · Annamalai',
-      address: 'Opp. MRC Mill, 2/43-B, Sethumadai Road, Annamalai, Coimbatore, Tamil Nadu 642104',
-      url: 'https://maps.app.goo.gl/sWHAV2kQ8sALmoa88'
+      address: '20/1 Sethumadai Road, Near IOB Bank, Opp. Masaniyamman Old Arch, Anaimalai, Coimbatore, Tamilnadu 642014',
+      url: 'https://maps.app.goo.gl/hz6ZbgAxdeMvQBxp9'
     }
   ];
 
@@ -42,4 +41,78 @@ document.addEventListener('DOMContentLoaded', () => {
   dialog.addEventListener('click', event => {
     if (event.target === dialog) dialog.close();
   });
-});
+
+  const callTriggers = document.querySelectorAll('[data-call]');
+  if (callTriggers.length) {
+    const callDialog = document.createElement('dialog');
+  callDialog.className = 'directions-dialog';
+  callDialog.setAttribute('aria-labelledby', 'call-title');
+  callDialog.innerHTML = `
+    <div class="directions-panel">
+      <button class="directions-close" type="button" aria-label="Close call chooser">&times;</button>
+      <span class="directions-eyebrow">Call our team</span>
+      <h2 id="call-title">Choose a location</h2>
+      <p class="directions-intro">Select the showroom you want to call.</p>
+      <div class="directions-options">
+        <a class="directions-option" href="tel:+919791676260">
+          <span class="directions-pin"><i class="fa-solid fa-phone" aria-hidden="true"></i></span>
+          <span class="directions-location"><strong>Pollachi - Meenakshipuram</strong><small>97916 76260</small></span>
+          <i class="fa-solid fa-arrow-right directions-arrow" aria-hidden="true"></i>
+        </a>
+        <a class="directions-option" href="tel:+918270975672">
+          <span class="directions-pin"><i class="fa-solid fa-phone" aria-hidden="true"></i></span>
+          <span class="directions-location"><strong>Anaimalai</strong><small>82709 75672</small></span>
+          <i class="fa-solid fa-arrow-right directions-arrow" aria-hidden="true"></i>
+        </a>
+      </div>
+    </div>`;
+  document.body.append(callDialog);
+  const callCloseButton = callDialog.querySelector('.directions-close');
+  callTriggers.forEach(trigger => trigger.addEventListener('click', () => callDialog.showModal()));
+  callCloseButton.addEventListener('click', () => callDialog.close());
+    callDialog.addEventListener('click', event => {
+      if (event.target === callDialog) callDialog.close();
+    });
+  }
+
+  const whatsappTriggers = document.querySelectorAll('[data-whatsapp], .footer a[aria-label="WhatsApp"]');
+  if (!whatsappTriggers.length) return;
+  const whatsappDialog = document.createElement('dialog');
+  whatsappDialog.className = 'directions-dialog';
+  whatsappDialog.setAttribute('aria-labelledby', 'whatsapp-title');
+  whatsappDialog.innerHTML = `
+    <div class="directions-panel">
+      <button class="directions-close" type="button" aria-label="Close WhatsApp chooser">&times;</button>
+      <span class="directions-eyebrow">Message our team</span>
+      <h2 id="whatsapp-title">Choose a location</h2>
+      <p class="directions-intro">Select the showroom you want to message on WhatsApp.</p>
+      <div class="directions-options">
+        <a class="directions-option" href="https://wa.me/919791676260" target="_blank" rel="noopener noreferrer">
+          <span class="directions-pin"><i class="fa-brands fa-whatsapp" aria-hidden="true"></i></span>
+          <span class="directions-location"><strong>Pollachi - Meenakshipuram</strong><small>97916 76260</small></span>
+          <i class="fa-solid fa-arrow-right directions-arrow" aria-hidden="true"></i>
+        </a>
+        <a class="directions-option" href="https://wa.me/918270975672" target="_blank" rel="noopener noreferrer">
+          <span class="directions-pin"><i class="fa-brands fa-whatsapp" aria-hidden="true"></i></span>
+          <span class="directions-location"><strong>Anaimalai</strong><small>82709 75672</small></span>
+          <i class="fa-solid fa-arrow-right directions-arrow" aria-hidden="true"></i>
+        </a>
+      </div>
+    </div>`;
+  document.body.append(whatsappDialog);
+  const whatsappCloseButton = whatsappDialog.querySelector('.directions-close');
+  whatsappTriggers.forEach(trigger => trigger.addEventListener('click', event => {
+    event.preventDefault();
+    whatsappDialog.showModal();
+  }));
+  whatsappCloseButton.addEventListener('click', () => whatsappDialog.close());
+  whatsappDialog.addEventListener('click', event => {
+    if (event.target === whatsappDialog) whatsappDialog.close();
+  });
+};
+
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', initializeLocationChoosers);
+} else {
+  initializeLocationChoosers();
+}

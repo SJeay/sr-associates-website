@@ -157,7 +157,7 @@ document.addEventListener('DOMContentLoaded', () => {
       }
 
       if (status) {
-        status.textContent = 'This form is not connected yet, so your enquiry has not been sent. Please call 99421 62602 or WhatsApp 98652 63522.';
+        status.textContent = 'This form is not connected yet, so your enquiry has not been sent. Please call 97916 76260 for Pollachi or 82709 75672 for Anaimalai.';
         status.className = 'form-status info';
       }
     });
