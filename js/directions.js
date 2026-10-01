@@ -10,7 +10,7 @@ const initializeLocationChoosers = () => {
     {
       name: 'S.R & Co Electronics · Annamalai',
       address: '20/1 Sethumadai Road, Near IOB Bank, Opp. Masaniyamman Old Arch, Anaimalai, Coimbatore, Tamilnadu 642104',
-      url: 'https://maps.app.goo.gl/hz6ZbgAxdeMvQBxp9'
+      url: 'https://goo.gl/maps/WcGmM8udLJat6mEb7?g_st=ac'
     }
   ];
 
@@ -23,16 +23,37 @@ const initializeLocationChoosers = () => {
       <span class="directions-eyebrow">Plan your visit</span>
       <h2 id="directions-title">Choose a location</h2>
       <p class="directions-intro">Open directions to the SR Associates location you want to visit.</p>
-      <div class="directions-options">
-        ${locations.map(location => `
-          <a class="directions-option" href="${location.url}" target="_blank" rel="noopener noreferrer">
-            <span class="directions-pin"><i class="fa-solid fa-location-dot" aria-hidden="true"></i></span>
-            <span class="directions-location"><strong>${location.name}</strong><small>${location.address}</small></span>
-            <i class="fa-solid fa-arrow-up-right-from-square directions-arrow" aria-hidden="true"></i>
-          </a>
-        `).join('')}
-      </div>
+      <div class="directions-options"></div>
     </div>`;
+  const options = dialog.querySelector('.directions-options');
+  locations.forEach(location => {
+    const option = document.createElement('a');
+    option.className = 'directions-option';
+    option.href = location.url;
+    option.target = '_blank';
+    option.rel = 'noopener noreferrer';
+
+    const pin = document.createElement('span');
+    pin.className = 'directions-pin';
+    const pinIcon = document.createElement('i');
+    pinIcon.className = 'fa-solid fa-location-dot';
+    pinIcon.setAttribute('aria-hidden', 'true');
+    pin.append(pinIcon);
+
+    const details = document.createElement('span');
+    details.className = 'directions-location';
+    const name = document.createElement('strong');
+    name.textContent = location.name;
+    const address = document.createElement('small');
+    address.textContent = location.address;
+    details.append(name, address);
+
+    const arrow = document.createElement('i');
+    arrow.className = 'fa-solid fa-arrow-up-right-from-square directions-arrow';
+    arrow.setAttribute('aria-hidden', 'true');
+    option.append(pin, details, arrow);
+    options.append(option);
+  });
   document.body.append(dialog);
 
   const closeButton = dialog.querySelector('.directions-close');

@@ -960,23 +960,20 @@ function Contact() {
       <section className="contact-detail-section">
         <div className="wrap contact-detail-grid">
           <div className="map-card">
-            <div className="map-art">
-              <div className="map-road road-one" />
-              <div className="map-road road-two" />
-              <div className="map-road road-three" />
-              <div className="map-pin">
-                <MapPin size={24} />
-              </div>
-              <div className="map-label">
-                SR Associates <small>Pollachi, Tamil Nadu</small>
-              </div>
-              <span className="map-town">POLLACHI, TAMIL NADU</span>
-            </div>
+            <iframe
+              className="map-art"
+              title="Google Map: S.R & CO Electronics Annamalai location"
+              src="https://maps.google.com/maps?q=10.578389%2C76.934444&z=17&output=embed"
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+            />
             <a
               className="map-link"
-              href="https://maps.google.com/?q=SR+Associates+Pollachi"
+              href="https://goo.gl/maps/WcGmM8udLJat6mEb7?g_st=ac"
+              target="_blank"
+              rel="noopener noreferrer"
             >
-              Open directions in Google Maps <ArrowUpRight size={17} />
+              S.R & CO Electronics · Annamalai <ArrowUpRight size={17} />
             </a>
           </div>
           <div className="visit-info">
