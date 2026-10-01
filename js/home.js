@@ -12,12 +12,13 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   document.querySelectorAll('.footer-contact > span:first-of-type').forEach(location => {
-    if (!location.textContent.includes('Pollachi Main Road')) return;
-    location.innerHTML = '<i class="fa-solid fa-location-dot"></i> 7/283B, Alva Hospital Opp, Pollachi Road,<br>Meenakshipurm, Coimbatore, Tamilnadu, 642013';
+    if (!location.textContent.includes('Pollachi Main Road') && !location.textContent.includes('642013')) return;
+    location.innerHTML = '<i class="fa-solid fa-location-dot"></i> 7/283B, Alva Hospital Opp, Pollachi Road,<br>Meenakshipurm, Coimbatore, Tamilnadu, 642103';
   });
   document.querySelectorAll('a').forEach(link => {
     if (!link.textContent.includes('Masaniyamman Old Arch')) return;
     link.href = 'https://maps.app.goo.gl/hz6ZbgAxdeMvQBxp9';
+    link.textContent = link.textContent.replace('642014', '642104');
   });
 
   const menuButton = document.querySelector('.menu-button');

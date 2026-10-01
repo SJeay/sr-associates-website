@@ -4,12 +4,12 @@ const initializeLocationChoosers = () => {
   const locations = [
     {
       name: 'SR Associates · Pollachi',
-      address: '7/283B, Alva Hospital Opp, Pollachi Road, Meenakshipurm, Coimbatore, Tamilnadu, 642013',
+      address: '7/283B, Alva Hospital Opp, Pollachi Road, Meenakshipurm, Coimbatore, Tamilnadu, 642103',
       url: 'https://maps.app.goo.gl/NBx9xJLWrC9ZVFE58'
     },
     {
       name: 'S.R & Co Electronics · Annamalai',
-      address: '20/1 Sethumadai Road, Near IOB Bank, Opp. Masaniyamman Old Arch, Anaimalai, Coimbatore, Tamilnadu 642014',
+      address: '20/1 Sethumadai Road, Near IOB Bank, Opp. Masaniyamman Old Arch, Anaimalai, Coimbatore, Tamilnadu 642104',
       url: 'https://maps.app.goo.gl/hz6ZbgAxdeMvQBxp9'
     }
   ];
