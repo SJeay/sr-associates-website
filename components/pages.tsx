@@ -314,7 +314,7 @@ export function Hero({
           </div>
         )}
         <div className="hero-note">
-          <MapPin size={14} /> Your neighbourhood home store · Pollachi, Tamil
+          <MapPin size={14} /> Your neighbourhood home store · Meenakshipuram, Pollachi
           Nadu
         </div>
       </div>
@@ -922,7 +922,7 @@ function Contact() {
         <SectionHead
           eyebrow="We’re just around the corner"
           title="Come on in."
-          text="Pollachi, Tamil Nadu · Contact us to plan your visit"
+          text="Pollachi - Meenakshipuram, Tamil Nadu · Contact us to plan your visit"
         />
         <div className="contact-cards">
           <a href="/contact">
@@ -945,13 +945,13 @@ function Contact() {
             </span>
             <ArrowUpRight size={17} />
           </a>
-          <a href="https://maps.google.com/?q=SR+Associates+Pollachi">
+          <a href="https://maps.google.com/?q=SR+Associates+Pollachi+-+Meenakshipuram">
             <span className="contact-icon">
               <MapPin />
             </span>
             <span>
               <b>Find the showroom</b>
-              <small>Pollachi, Tamil Nadu</small>
+              <small>Pollachi - Meenakshipuram, Tamil Nadu</small>
             </span>
             <ArrowUpRight size={17} />
           </a>
@@ -1015,7 +1015,7 @@ function Contact() {
           </h2>
           <p>
             Add your showroom phone and WhatsApp details here so customers can
-            reach your Pollachi team directly.
+            reach your Pollachi - Meenakshipuram team directly.
           </p>
         </div>
         <div className="enquiry-links">

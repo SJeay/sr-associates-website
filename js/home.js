@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
   });
   if (footerWhatsappLinks.length && !document.querySelector('script[src^="/js/directions.js"]')) {
     const chooserScript = document.createElement('script');
-    chooserScript.src = '/js/directions.js?v=4';
+    chooserScript.src = '/js/directions.js?v=5';
     chooserScript.defer = true;
     document.body.append(chooserScript);
   }

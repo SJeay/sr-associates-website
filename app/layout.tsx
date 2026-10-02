@@ -3,10 +3,10 @@ import "./globals.css";
 import { SiteHeader, SiteFooter, FloatingActions } from "@/components/site";
 
 export const metadata: Metadata = {
-  title: "SR Associates | Electronics, Furniture & Home Appliances | Pollachi",
+  title: "SR Associates | Electronics, Furniture & Home Appliances | Pollachi - Meenakshipuram",
   description: "SR Associates is a trusted electronics, furniture, mobiles, and home appliances showroom in Pollachi offering genuine branded products, EMI options, delivery, and installation support.",
-  openGraph: { title: "SR Associates | Make home feel more like you", description: "Explore trusted brands, thoughtful service and everything your home needs in Pollachi.", type: "website", locale: "en_IN" },
-  twitter: { card: "summary_large_image", title: "SR Associates | Pollachi", description: "Everything your home needs, thoughtfully chosen." },
+  openGraph: { title: "SR Associates | Make home feel more like you", description: "Explore trusted brands, thoughtful service and everything your home needs in Pollachi - Meenakshipuram.", type: "website", locale: "en_IN" },
+  twitter: { card: "summary_large_image", title: "SR Associates | Pollachi - Meenakshipuram", description: "Everything your home needs, thoughtfully chosen." },
 };
 
 const localBusiness = {

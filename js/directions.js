@@ -3,7 +3,7 @@ const initializeLocationChoosers = () => {
 
   const locations = [
     {
-      name: 'SR Associates · Pollachi',
+      name: 'SR Associates · Pollachi - Meenakshipuram',
       address: '7/283B, Alva Hospital Opp, Pollachi Road, Meenakshipurm, Coimbatore, Tamilnadu, 642103',
       url: 'https://maps.app.goo.gl/NBx9xJLWrC9ZVFE58'
     },
